@@ -1,0 +1,81 @@
+import time
+
+def intro():
+    print("Welcome to the Text-based Adventure Game!")
+    time.sleep(2)
+    print("You find yourself in a mysterious forest...")
+    time.sleep(2)
+    print("Your goal is to find the hidden treasure.")
+    time.sleep(2)
+
+def choose_path():
+    print("\nWhich path will you choose?")
+    print("1. Go left into the dark cave.")
+    print("2. Go right towards the sound of rushing water.")
+    choice = input("Enter 1 or 2: ")
+    if choice == '1':
+        cave()
+    elif choice == '2':
+        river()
+    else:
+        print("Invalid choice!")
+        choose_path()
+
+def cave():
+    print("\nYou enter the dark cave and hear strange noises...")
+    time.sleep(2)
+    print("A giant spider appears!")
+    time.sleep(2)
+    print("What will you do?")
+    print("1. Fight the spider.")
+    print("2. Try to run away.")
+    choice = input("Enter 1 or 2: ")
+    if choice == '1':
+        print("You bravely fight the spider, but it's too powerful...")
+        time.sleep(2)
+        print("Game over!")
+    elif choice == '2':
+        print("You manage to escape from the spider!")
+        time.sleep(2)
+        print("You find a hidden passage deeper into the cave...")
+        time.sleep(2)
+        print("You discover the treasure chest!")
+        time.sleep(2)
+        print("Congratulations! You win!")
+    else:
+        print("Invalid choice!")
+        cave()
+
+def river():
+    print("\nYou follow the sound of rushing water and reach a river.")
+    time.sleep(2)
+    print("There's a small boat on the shore.")
+    time.sleep(2)
+    print("What will you do?")
+    print("1. Get in the boat and cross the river.")
+    print("2. Look for another way to cross.")
+    choice = input("Enter 1 or 2: ")
+    if choice == '1':
+        print("You get in the boat and start rowing...")
+        time.sleep(2)
+        print("The current is too strong and you're swept away!")
+        time.sleep(2)
+        print("Game over!")
+    elif choice == '2':
+        print("You search for another way to cross the river...")
+        time.sleep(2)
+        print("You find a hidden bridge and safely cross the river.")
+        time.sleep(2)
+        print("You continue your journey...")
+        choose_path()
+    else:
+        print("Invalid choice!")
+        river()
+
+# Main function
+def main():
+    intro()
+    choose_path()
+
+if __name__ == "__main__":
+    main()
